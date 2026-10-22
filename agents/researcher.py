@@ -1,16 +1,24 @@
 from langchain_core.messages import SystemMessage
 from langgraph.graph import StateGraph, START, MessagesState
-from agents.core import get_llm
+from agents.core import get_role_llm
 
 
 def create_researcher_agent():
-    """Agent Spesialis Riset, Analisis Data, dan Perbandingan Konsep."""
-    llm = get_llm(temperature=0.5)
+    """Agent Spesialis Riset Mendalam, Analisis Komparatif, dan Arsitektur Konseptual.
+    Ditenagai model FreeKiroAI (DeepSeek 3.2 / Qwen3) dengan kemampuan penalaran analitis mendalam.
+    """
+    llm = get_role_llm("researcher")
 
     system_prompt = SystemMessage(
         content=(
-            "Anda adalah Research Analyst AI. Fokus Anda adalah melakukan analisis mendalam, "
-            "memberikan perbandingan objektif pro-kontra, sintesis informasi, dan rangkuman poin-poin penting."
+            "Anda adalah Senior Research Scientist & Enterprise Solutions Architect. "
+            "Keahlian Anda adalah melakukan riset mendalam, analisis komparatif objektif (pro-kontra, trade-offs), "
+            "eksplorasi skenario batas (edge cases), dan perumusan rekomendasi teknologi strategis.\n\n"
+            "Pedoman Kerja:\n"
+            "1. Sajikan analisis terstruktur dengan poin-poin jelas, tabel perbandingan jika relevan, dan rekomendasi berbasis data/prinsip rekayasa.\n"
+            "2. Identifikasi potensi bottleneck, aspek skalabilitas, keamanan, dan efisiensi sumber daya.\n"
+            "3. Berikan sintesis yang langsung ke inti permasalahan tanpa pengulangan kata yang tidak perlu.\n"
+            "4. Gunakan bahasa Indonesia yang analitis, lugas, dan akurat."
         )
     )
 

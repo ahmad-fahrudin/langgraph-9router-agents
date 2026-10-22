@@ -1,38 +1,47 @@
 ---
 name: my-agents
 description: >-
-  Manual-only skill for LangGraph 9Router Agents. DO NOT activate automatically.
-  Activate ONLY when the user explicitly runs '/skills' or asks to use 'my-agents'.
+  LangGraph 9Router collaborative multi-agent reasoning and execution engine.
+  Use this skill AUTOMATICALLY for complex problem solving, coding, refactoring,
+  debugging, architecture design, in-depth research, algorithmic challenges,
+  or whenever specialized AI agents (Coder on FreeGptCODEX, Researcher on FreeKiroAI,
+  General Assistant on AntiGravityModel) should collaborate and think together
+  ('berpikir bareng-bareng') to produce high-speed, authoritative results.
 ---
 
-# My Agents (LangGraph + 9Router Combo)
+# 9Router LangGraph Collaborative Multi-Agent System
 
-Skill ini digunakan untuk mendelegasikan tugas ke agent-agent LangGraph yang berjalan menggunakan model Combo 9Router.
+Sistem Multi-Agent LangGraph yang ditenagai oleh model-model spesialis 9Router Combo:
+- **`team`** (Default / Rekomendasi): Multi-agent kolaboratif penuh di mana **Researcher (FreeKiroAI)** dan **Coder (FreeGptCODEX)** berpikir bareng-bareng untuk menghasilkan rancangan arsitektur dan kode produksi terlengkap, disintesis oleh **Supervisor (AntiGravityModel)**.
+- **`coder`**: Spesialis software engineering tingkat produksi, penulisan kode modular, refactoring, dan algoritma (FreeGptCODEX).
+- **`researcher`**: Spesialis riset mendalam, analisis komparatif, evaluasi trade-off, dan arsitektur sistem (FreeKiroAI).
+- **`general`**: Asisten umum untuk percakapan, cek waktu, dan kalkulasi matematika presisi (AntiGravityModel).
+- **`auto`**: Smart router yang otomatis memilih antara delegasi instan untuk tugas sederhana atau kolaborasi tim untuk tugas kompleks.
 
-## Daftar Agent yang Tersedia
-- **`general`** : Asisten umum, percakapan, cek waktu, kalkulator matematika.
-- **`coder`** : Spesialis penulisan kode, software engineering, refactor, dan debugging.
-- **`researcher`** : Spesialis riset mendalam, analisa komparatif, dan sintesis konsep.
+## Eksekusi Otomatis (Tanpa Perlu /skills)
 
-## Cara Menjalankan Agent
-Ketika skill ini dipanggil, jalankan agent yang sesuai dengan perintah shell:
+Jalankan perintah shell berikut langsung di terminal:
 
 ```bash
-python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py <nama_agent> "<instruksi/pertanyaan>"
+python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py team "<instruksi/pertanyaan>"
 ```
 
-### Contoh Eksekusi:
-1. Jika pengguna meminta bantuan umum atau perhitungan:
-   ```bash
-   python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py general "Berapa 125 * 18?"
-   ```
-2. Jika pengguna meminta membuatkan atau mereview kode:
-   ```bash
-   python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py coder "Buat fungsi rekursif fibonacci di Python"
-   ```
-3. Jika pengguna meminta riset atau perbandingan:
-   ```bash
-   python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py researcher "Bandingkan Redis vs Memcached"
-   ```
+Atau untuk tugas spesifik:
+- **Berpikir Bareng-bareng (Default & Direkomendasikan untuk tugas kompleks/koding):**
+  ```bash
+  python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py team "<pertanyaan/tugas>"
+  ```
+- **Spesialis Koding Murni (Cepat):**
+  ```bash
+  python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py coder "<tugas koding>"
+  ```
+- **Spesialis Riset & Analisis Teori:**
+  ```bash
+  python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py researcher "<topik riset>"
+  ```
+- **Asisten Umum & Kalkulasi:**
+  ```bash
+  python3 /home/fahrudin/Projects/langgraph-9router-agents/run.py general "<perhitungan/pertanyaan umum>"
+  ```
 
-Setelah perintah dieksekusi, tampilkan hasil respons dari agent kepada pengguna secara rapi.
+Tampilkan output yang dihasilkan oleh agent kepada pengguna secara rapi dan profesional.
